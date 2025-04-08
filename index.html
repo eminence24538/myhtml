@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fef5e7;
+        }
+
+        header {
+            background: #ff6f61;
+            color: white;
+            padding: 20px;
+        }
+
+        .image-gallery {
+            margin: 20px auto;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px #ccc;
+        }
+
+        .message-form textarea {
+            width: 60%;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #ff6f61;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #ff3f3f;
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: float 2s ease-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+    </style>
+    <script>
+        document.addEventListener("click", function(e) {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.className = "heart";
+            heart.style.left = `${e.clientX}px`;
+            heart.style.top = `${e.clientY}px`;
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 2000);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>To The Most Beautiful Person</h1>
+        <p>You make my world brighter every day!</p>
+    </header>
+    
+    <section class="image-gallery">
+        <h2>Our Beautiful Memories</h2>
+        <div class="gallery">
+            <img src="https://scontent.fktm20-1.fna.fbcdn.net/v/t51.75761-15/489780646_17905299990129771_7760084190365595844_n.webp?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=mL8XCjxL9dMQ7kNvwFO6L2d&_nc_oc=AdlN19ravXJfrQSc_kqGv9GmbDcFQKbsVqI5hgX6SxKznMNhGE10QmmIrJBV1zLoTUw&_nc_zt=23&_nc_ht=scontent.fktm20-1.fna&_nc_gid=7NH7XRXJcLt522SCrfd6Rg&oh=00_AfHUVXMMA8xv00npF8-hbWvZRAVy5O0G8X7UBSqNwHGI_Q&oe=67FB1EF8" alt="Memory 1">
+            <img src="https://scontent.fktm20-1.fna.fbcdn.net/v/t51.75761-15/489922528_17905299999129771_6231971188608725961_n.webp?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=JVopOptgX9gQ7kNvwFXLkw_&_nc_oc=Adm3-RqjrzxMfFAkMZfg10fS7oc_J1dFmTsTAlnFKPH_nOxgC6dou-4pwmuIlfJyOtU&_nc_zt=23&_nc_ht=scontent.fktm20-1.fna&_nc_gid=7NH7XRXJcLt522SCrfd6Rg&oh=00_AfERgZlhKZlmR20O8oufI8xPIzQj-Wrrcy-z0-X8H0uvRQ&oe=67FB16E3" alt="Memory 2">
+            <img src="https://scontent.fktm20-1.fna.fbcdn.net/v/t51.75761-15/489876064_17905300008129771_4284506154671775636_n.webp?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=oiTX6od0nlIQ7kNvwEslNlg&_nc_oc=Adm89Rxl2X-2auqVN-1UWnCjIU_pzdDh-77SQdcq-45zktb3ivic7GBQW25qB3r63BI&_nc_zt=23&_nc_ht=scontent.fktm20-1.fna&_nc_gid=7NH7XRXJcLt522SCrfd6Rg&oh=00_AfHj8ddhzpZ8A8uhHJ20qlj4sjqrU7cjPhCtSHrnuyOZKA&oe=67FB1E05" alt="Memory 3">
+        </div>
+    </section>
+    
+    <section class="message-form">
+        <h2>Write A Message For You</h2>
+        <form action="process.php" method="POST">
+            <textarea name="message" placeholder="Write a heartfelt message here..."></textarea>
+            <button type="submit">Send with Love 💖</button>
+        </form>
+    </section>
+</body>
+</html>
